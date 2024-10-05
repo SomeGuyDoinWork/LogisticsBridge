@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "org.dv.minecraft.logisticsbridge.mixin",
+  "refmap": "mixins.logisticsbridge.refmap.json",
+  "plugin": "org.dv.minecraft.logisticsbridge.mixin.core.MixinConfigPlugin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
