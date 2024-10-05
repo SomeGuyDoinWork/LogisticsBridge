@@ -46,21 +46,7 @@ jobs:
         arguments: build
 
     - name: Upload Build Artifacts
-      uses: actions/upload-artifact@v2.2.3
+      uses: actions/upload-artifact@v4.4.0
       with:
         name: LogisticsBridge-${{ steps.gradle_properties.outputs.mod_version }}-${{ steps.vars.outputs.SHA_SHORT }}
         path: build/libs
-
-    - name: Create GitHub Release
-      uses: KorewaLidesu/github-release@2.0
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        tag: ${{ steps.gradle_properties.outputs.mod_version }}
-        commitish: main
-        body:  ${{ steps.vars.outputs.CHANGELOG }}
-        name:  ${{ steps.gradle_properties.outputs.mod_version }}
-        prerelease: false
-        allow_override: true
-        gzip: false
-        files: |
-            ./LogisticsBridge-Artifact/LogisticsBridge-${{ steps.gradle_properties.outputs.mod_version }}.jar
